@@ -1,0 +1,28 @@
+{
+  "name": "PhaserTSWebpack",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Emilio G.Correa <ipotaje@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack",
+    "deploy": "webpack --config webpack.production.config.js",
+    "test": "standard"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.15.0",
+    "browser-sync-webpack-plugin": "^1.1.2",
+    "copy-webpack-plugin": "^4.0.1",
+    "expose-loader": "^0.7.1",
+    "standard": "^8.0.0",
+    "ts-loader": "^1.2.2",
+    "typescript": "^2.0.10",
+    "webfontloader": "^1.6.26",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "phaser": "^2.6.2"
+  }
+}
