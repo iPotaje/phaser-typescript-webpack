@@ -1,13 +1,10 @@
 {
   "name": "PhaserTSWebpack",
   "version": "0.1.0",
-  "description": "",
+  "description": "A boilerplate to start with Phaser + TypesScript + Webpack.",
   "author": "Emilio G.Correa <ipotaje@gmail.com>",
-  "main": "index.js",
   "scripts": {
-    "dev": "webpack",
-    "deploy": "webpack --config webpack.production.config.js",
-    "test": "standard"
+    "dev": "webpack"
   },
   "license": "ISC",
   "devDependencies": {
