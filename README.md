@@ -1,4 +1,4 @@
-# Phaser + TypeScript + Webpack.
+# Phaser + TypeScript + Webpack
 #### A boilerplate to start with Phaser + TypesScript + Webpack.
 
 
@@ -11,8 +11,8 @@
 Todo: Better webpack.config.js
 
 ## Credits
-This repo is a copy modified of:
+This repo is a copy modified from:
 
 https://github.com/lean/phaser-es6-webpack
 
-with TypeScript
+```with TypeScript```
