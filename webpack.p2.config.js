@@ -34,14 +34,14 @@ module.exports = {
   plugins: [
     definePlugin,
     new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js"),
-    new BrowserSyncPlugin({
-      host: process.env.IP || 'localhost',
-      port: process.env.PORT || 3000,
-      server: {
-        baseDir: ['dist'],
-        compress: true
-      }
-    }),
+    // new BrowserSyncPlugin({
+    //   host: process.env.IP || 'localhost',
+    //   port: process.env.PORT || 3000,
+    //   server: {
+    //     baseDir: ['dist'],
+    //     compress: true
+    //   }
+    // }),
     new CopyWebpackPlugin([
       { from: 'src/images', to: 'images' },
       { from: 'src/index.html', to: ''}

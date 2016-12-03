@@ -1,10 +1,11 @@
 import 'pixi'
+// import 'p2'
 import * as Phaser from 'phaser'
 
 class SimpleGame {
 
     constructor() {
-        this.game = new Phaser.Game(800, 600, Phaser.AUTO, 'content', { preload: this.preload, create: this.create });
+        this.game = new Phaser.Game(800, 600, Phaser.WEBGL, 'content', { preload: this.preload, create: this.create });
     }
 
     game: Phaser.Game;

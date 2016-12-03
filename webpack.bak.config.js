@@ -6,10 +6,10 @@ var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 // Phaser webpack config
 var phaserModule = path.join(__dirname, '/node_modules/phaser/');
- var phaser = path.join(phaserModule, 'build/custom/phaser-split.js')
-//var phaser = path.join(phaserModule, 'build/custom/phaser-arcade-physics.js');
+//  var phaser = path.join(phaserModule, 'build/custom/phaser-split.js')
+var phaser = path.join(phaserModule, 'build/custom/phaser-arcade-physics.js');
 var pixi = path.join(phaserModule, 'build/custom/pixi.js');
-var p2 = path.join(phaserModule, 'build/custom/p2.js')
+// var p2 = path.join(phaserModule, 'build/custom/p2.js')
 
 var definePlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true'))
@@ -18,7 +18,9 @@ var definePlugin = new webpack.DefinePlugin({
 module.exports = {
   entry: {
     app:    path.resolve(__dirname, 'src/main.ts'),
-    vendor: ['pixi', 'p2', 'phaser', 'webfontloader']
+    vendor: ['pixi'
+      // , 'p2'
+      , 'phaser', 'webfontloader']
   },
 
   devtool: 'cheap-source-map',
@@ -34,14 +36,14 @@ module.exports = {
   plugins: [
     definePlugin,
     new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js"),
-    new BrowserSyncPlugin({
-      host: process.env.IP || 'localhost',
-      port: process.env.PORT || 3000,
-      server: {
-        baseDir: ['dist'],
-        compress: true
-      }
-    }),
+    // new BrowserSyncPlugin({
+    //   host: process.env.IP || 'localhost',
+    //   port: process.env.PORT || 3000,
+    //   server: {
+    //     baseDir: ['dist'],
+    //     compress: true
+    //   }
+    // }),
     new CopyWebpackPlugin([
       { from: 'src/images', to: 'images' },
       { from: 'src/index.html', to: ''}
@@ -59,7 +61,7 @@ module.exports = {
       // all files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'
       { test: /\.tsx?$/, loader:           "ts-loader" },
       { test: /pixi\.js/, loader:          'expose?PIXI' },
-      { test: /p2\.js/, loader:          'expose?p2' },
+      // { test: /p2\.js/, loader:          'expose?p2' },
       { test: /phaser-split\.js$/, loader: 'expose?Phaser' }
     ]
   },
@@ -73,7 +75,7 @@ module.exports = {
     extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
     alias:      {
       'phaser': phaser,
-      'p2':   p2,
+      // 'p2':   p2,
       'pixi':   pixi
     }
   },
