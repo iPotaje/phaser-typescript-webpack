@@ -43,8 +43,8 @@ module.exports = {
       }
     }),
     new CopyWebpackPlugin([
-      { from: 'src/images', to: 'images' },
-      { from: 'src/index.html', to: ''}
+      { from: './src/images', to: path.resolve(__dirname, 'dist/images') },
+      { from: './src/index.html', to: path.resolve(__dirname, 'dist')}
     ])
     ,new webpack.optimize.UglifyJsPlugin({
       // comments : false,
